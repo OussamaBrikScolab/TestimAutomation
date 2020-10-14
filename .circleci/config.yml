@@ -7,7 +7,7 @@ jobs:
     - image: testim/docker-cli
     steps:
       - run: mkdir -p $CIRCLE_TEST_REPORTS/testim/
-      - run: testim --project "<PROJECT ID>" --label "<LABEL>" --grid "<Your grid name>" --token "<TOKEN>" --report-file $CIRCLE_TEST_REPORTS/testim/results.xml
+      - run: testim --token "ttGTblkWfLuVqgu41NrYo92VP0l088yEV8W7XoSNf0u8lCnl9p" --project "CVVbOhLUV1VGac2RkNF0" --grid "Lambdatest" --report-file $CIRCLE_TEST_REPORTS/testim/results.xml
       - store_artifacts:
           path: /tmp/circleci-test-results
       - store_test_results:
