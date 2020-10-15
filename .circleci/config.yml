@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    name: Testim
+    version: 1.0
+    environment:
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+    docker:
+    - image: testim/docker-cli
+    steps:
+      - run: mkdir -p $CIRCLE_TEST_REPORTS/testim/
+      - run: testim --token "ttGTblkWfLuVqgu41NrYo92VP0l088yEV8W7XoSNf0u8lCnl9p" --project "CVVbOhLUV1VGac2RkNF0" --grid "Lambdatest" --grid-password PK9xlcDnLLSsmeKOeoXxsgOivn2VOo7rnS6SEre4hgjG8JS60s --grid-username kevinscolab --browser chrome --suite "Login - Signin" axHuahbQAT --report-file $CIRCLE_TEST_REPORTS/testim/results_Login.xml
+      - store_artifacts:
+          path: /tmp/circleci-test-results
+      - store_test_results:
+          path: /tmp/circleci-test-results
